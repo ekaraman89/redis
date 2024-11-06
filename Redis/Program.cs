@@ -9,7 +9,7 @@ var subscriber = redis.GetSubscriber();
 await subscriber.SubscribeAsync("*", async (channel, key) =>
 {
     Console.WriteLine($"channel: {channel}, Anahtar değişti: {key}");
-    //
+    
     // var value = await db.StringGetAsync(new RedisKey(key));
     // Console.WriteLine($"Anahtarın değeri: {value}");
 });
