@@ -6,7 +6,7 @@ var redis = await ConnectionMultiplexer.ConnectAsync("localhost");
 var db = redis.GetDatabase();
 var subscriber = redis.GetSubscriber();
 
-await subscriber.SubscribeAsync("*", async (channel, key) =>
+await subscriber.SubscribeAsync("__keyspace@0__:test", async (channel, key) =>
 {
     Console.WriteLine($"channel: {channel}, Anahtar değişti: {key}");
     
